@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import UserForm from "./UserForm";
+import UserTable from "./UserTable";
+import SearchByCriteria from "./SearchByCriteria";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app-container">
+      <header className="app-header">
+        <center>
+          {" "}
+          <h1 className="app-title"></h1>
+        </center>
       </header>
+      <main className="app-main">
+        <section className="user-section">
+          <h2 className="section-title"></h2>
+          <UserForm />
+        </section>
+        <section className="user-section">
+          <h2 className="section-title">Search By Criteria</h2>
+          <SearchByCriteria /> {}
+        </section>
+        <section className="user-section">
+          <UserTable />
+        </section>
+      </main>
     </div>
   );
-}
-
+};
 export default App;
